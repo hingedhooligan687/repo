@@ -1,8 +1,8 @@
-Origin: DarkSix
-Label: DarkSix
+Origin: HingedHooligan's repo
+Label: HingedHooligan's repo
 Suite: stable
 Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm
 Components: main
-Description: DarkSix - dark mode for the stock iOS 6 apps
+Description: HingedHooligan's repo
