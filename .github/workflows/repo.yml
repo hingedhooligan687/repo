@@ -1,0 +1,50 @@
+name: Build Cydia repo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build repo files
+        run: |
+          set -e
+          mkdir -p _site/debs
+          cp Release index.html CydiaIcon.png _site/
+          if ! ls debs/*.deb >/dev/null 2>&1; then
+            echo "ERROR: no .deb files found in the debs folder"
+            exit 1
+          fi
+          cp debs/*.deb _site/debs/
+          cd _site
+          dpkg-scanpackages -m debs /dev/null > Packages
+          test -s Packages
+          bzip2 -k -f Packages
+          gzip -k -f Packages
+          echo "Built these files:"
+          ls -l . debs
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
