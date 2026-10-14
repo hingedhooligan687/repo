@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>DarkSix</string>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Dark mode</string>
+			<key>footerText</key>
+			<string>Flip the switches, then tap Respring to apply. Apps that are already open need to be closed and reopened.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Enabled</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.example.darksix</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Backgrounds</string>
+			<key>footerText</key>
+			<string>Apple Linen: linen background inside iMessage conversations (not the message list). Apple Pinstripes: a dark version of the pinstripe background in Settings.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Apple Linen</string>
+			<key>key</key>
+			<string>linen</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.example.darksix</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Apple Pinstripes</string>
+			<key>key</key>
+			<string>pinstripes</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.example.darksix</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Keyboard</string>
+			<key>footerText</key>
+			<string>Dark Keyboard: black keyboard with dark gray keys and white text. Turn it off to keep the stock keyboard.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Dark Keyboard</string>
+			<key>key</key>
+			<string>darkkeyboard</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.example.darksix</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Experimental</string>
+			<key>footerText</key>
+			<string>A list of work in progress experimental settings. WARNING! THINGS MAY NOT LOOK GOOD OR WORK CORRECTLY. USE AT YOUR OWN RISK</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>label</key>
+			<string>Experimental</string>
+			<key>detail</key>
+			<string>DSExperimentalListController</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Per-app dark mode</string>
+			<key>footerText</key>
+			<string>Choose which apps get dark mode.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>label</key>
+			<string>Apps</string>
+			<key>detail</key>
+			<string>DSAppsListController</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Respring</string>
+			<key>action</key>
+			<string>respring</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,9 @@
+Package: com.example.darksix
+Name: DarkSix
+Depends: mobilesubstrate
+Version: 2.1.9
+Architecture: iphoneos-arm
+Description: Dark mode for some stock iOS 6 apps
+Maintainer: you
+Author: you
+Section: Tweaks

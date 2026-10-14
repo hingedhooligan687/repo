@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Flip the switches, then tap Respring to apply. Apps that are already open need to be closed and reopened.</string>
+			<key>label</key>
+			<string>Dark mode</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.example.darksix</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Apple Linen: linen background inside iMessage conversations (not the message list). Apple Pinstripes: a dark version of the pinstripe background in Settings.</string>
+			<key>label</key>
+			<string>Backgrounds</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.example.darksix</string>
+			<key>key</key>
+			<string>linen</string>
+			<key>label</key>
+			<string>Apple Linen</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.example.darksix</string>
+			<key>key</key>
+			<string>pinstripes</string>
+			<key>label</key>
+			<string>Apple Pinstripes</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Makes the linen behind Notification Center dark. Takes effect the next time you open Notification Center.</string>
+			<key>label</key>
+			<string>Notification Center</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.example.darksix</string>
+			<key>key</key>
+			<string>darknc</string>
+			<key>label</key>
+			<string>Dark Notification Center</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>A list of work in progress experimental settings. WARNING! THINGS MAY NOT LOOK GOOD OR WORK CORRECTLY. USE AT YOUR OWN RISK</string>
+			<key>label</key>
+			<string>Experimental</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>detail</key>
+			<string>DSExperimentalListController</string>
+			<key>label</key>
+			<string>Experimental</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Choose which apps get dark mode.</string>
+			<key>label</key>
+			<string>Per-app dark mode</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>detail</key>
+			<string>DSAppsListController</string>
+			<key>label</key>
+			<string>Apps</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>respring</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Respring</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>DarkSix</string>
+</dict>
+</plist>

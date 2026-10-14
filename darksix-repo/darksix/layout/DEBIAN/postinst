@@ -1,0 +1,40 @@
+#!/bin/sh
+# Adds the dark ripple wallpaper to the stock wallpaper list, right after the last numbered wallpaper.
+SRC=/usr/share/DarkSix/wallpaper
+LOG=/var/mobile/Library/Preferences/DarkSix-wallpaper.txt
+[ -f "$SRC/DarkSix.png" ] || exit 0
+ls -laR /Library/Wallpaper > "$LOG" 2>&1
+chmod 644 "$LOG" 2>/dev/null
+chown mobile "$LOG" 2>/dev/null
+for D in /Library/Wallpaper /Library/Wallpaper/*; do
+  [ -d "$D" ] || continue
+  MARK="$D/.darksix-wallpaper"
+  if [ -f "$MARK" ]; then
+    NEW=`cat "$MARK"`
+    cp "$SRC/DarkSix.png" "$D/$NEW.png"
+    cp "$SRC/DarkSix.thumbnail.png" "$D/$NEW.thumbnail.png"
+    chmod 644 "$D/$NEW.png" "$D/$NEW.thumbnail.png"
+    continue
+  fi
+  MAX=-1; WIDTH=2; REST=""
+  for F in "$D"/[0-9]*.png; do
+    [ -f "$F" ] || continue
+    B=`basename "$F" .png`
+    case "$B" in *thumbnail*) continue;; esac
+    N=${B%%[!0-9]*}
+    R=${B#$N}
+    V=`echo "$N" | sed 's/^0*//'`
+    [ -z "$V" ] && V=0
+    if [ "$V" -gt "$MAX" ]; then MAX=$V; WIDTH=${#N}; REST="$R"; fi
+  done
+  [ "$MAX" -lt 0 ] && continue
+  NEXT=`expr $MAX + 1`
+  NEW=`printf "%0${WIDTH}d" $NEXT`"$REST"
+  cp "$SRC/DarkSix.png" "$D/$NEW.png"
+  cp "$SRC/DarkSix.thumbnail.png" "$D/$NEW.thumbnail.png"
+  chmod 644 "$D/$NEW.png" "$D/$NEW.thumbnail.png"
+  echo "$NEW" > "$MARK"
+  echo "added $D/$NEW.png" >> "$LOG"
+done
+ls -laR /Library/Wallpaper >> "$LOG" 2>&1
+exit 0

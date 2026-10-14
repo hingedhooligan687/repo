@@ -1,0 +1,11 @@
+#!/bin/sh
+# Removes the dark wallpaper when DarkSix is uninstalled (not when it is only switched off).
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
+  for D in /Library/Wallpaper /Library/Wallpaper/*; do
+    MARK="$D/.darksix-wallpaper"
+    [ -f "$MARK" ] || continue
+    NEW=`cat "$MARK"`
+    rm -f "$D/$NEW.png" "$D/$NEW.thumbnail.png" "$MARK"
+  done
+fi
+exit 0
